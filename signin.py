@@ -107,7 +107,7 @@ class HuluxiaSignin:
             'access_token=&app_version=1.2.2&code='
             '&device_code=' + self.device_code +
             '&device_model=' + device_model +
-            '&email=' + account +          # 接口字段名为 email，实为手机号
+            '&email=' + account +
             '&market_id=floor_huluxia&openid=&'
             'password=' + self.md5(password) +
             '&phone='
@@ -221,7 +221,7 @@ class HuluxiaSignin:
                 self.signin_continue_days = res.get('continueDays', 0)
                 self._emit(f'【{name}】签到成功，经验值 +{exp}', buffer)
                 total_exp += exp
-            time.sleep(self.sign_interval)
+            time.sleep(random.randint(5, 10))
 
         self._emit(f'本次为{nick}签到共获得：{total_exp} 经验值', buffer)
 
