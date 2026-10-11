@@ -1,7 +1,7 @@
 name: huluxia_signin
 on:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '30 23 * * *'
   workflow_dispatch:
 jobs:
   build:
